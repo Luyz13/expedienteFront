@@ -1,1 +1,114 @@
-<p>pacientes works!</p>
+<br><br>
+<div class="row">
+  <form class="example-form" [formGroup]="formRegistrarPaciente" (ngSubmit)="registrarPaciente()">
+    <mat-card>
+      <div class="row">
+        <div class="col-md-3 offset-md-1">
+          <h2 class="offset-md-1 color-titulos">Datos Basicos
+            <mat-icon mat-raised-button
+              #tooltip="matTooltip"
+              matTooltip="Es importante que tu telefono este actualizado"
+              matTooltipPosition="right"
+              matTooltipHideDelay="100"
+              aria-hidden="false">
+                help
+            </mat-icon>
+          </h2>
+        </div>
+      </div>
+      <div class="row">
+        <mat-form-field class="offset-md-1 col-md-3">
+          <mat-label>Nombre</mat-label>
+          <input autocomplete="off" formControlName="nombre" matInput>
+        </mat-form-field>
+        <mat-form-field class="col-md-3">
+          <mat-label>Apellido Paterno</mat-label>
+          <input autocomplete="off" formControlName="apellidoPaterno" matInput>
+        </mat-form-field>
+        <mat-form-field class="col-md-3">
+          <mat-label>Apellido Materno</mat-label>
+          <input autocomplete="off" formControlName="apellidoMaterno" matInput>
+        </mat-form-field>
+      </div>
+        <div class="row">
+        <mat-form-field class="offset-md-1 col-md-3">
+          <mat-label>Fecha Nacimiento</mat-label>
+          <input autocomplete="off" formControlName="fechaNacimiento" matInput>
+        </mat-form-field>
+        <mat-form-field class="col-md-3">
+          <mat-label>Sexo</mat-label>
+          <input autocomplete="off" formControlName="sexo" matInput>
+        </mat-form-field>
+        <mat-form-field class="col-md-3">
+          <mat-label>Correo</mat-label>
+          <input autocomplete="off" formControlName="correo" matInput>
+          <mat-error *ngIf="formRegistrarPaciente.controls['correo'].invalid">{{getErrorCorreo()}}</mat-error>
+        </mat-form-field>
+      </div>
+      <!--div class="row">
+        <mat-form-field class="offset-md-1 col-md-3">
+          <mat-label>Correo</mat-label>
+          <input autocomplete="off" formControlName="correo" matInput>
+          <mat-error *ngIf="formRegistrarCliente.controls['correo'].invalid">{{getErrorCorreo()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="col-md-3">
+          <mat-label>Telefono</mat-label>
+          <input autocomplete="off" formControlName="telefono" prefix="+52" mask=" 000 000 0000" matInput>
+        </mat-form-field>
+        <mat-form-field class="col-md-3">
+          <mat-label>Celular</mat-label>
+          <input autocomplete="off" formControlName="celular" prefix="+52" mask=" 000 000 0000" matInput>
+        </mat-form-field>
+      </div-->
+    </mat-card>
+    <mat-card>
+      <div class="row">
+        <div class="col-md-2 offset-md-1">
+          <h2 class="offset-md-1 color-titulos">Direccion
+            <mat-icon mat-raised-button
+              #tooltip="matTooltip"
+              matTooltip="Los datos deben coincidir con tu identificación"
+              matTooltipPosition="right"
+              matTooltipHideDelay="100"
+              aria-hidden="false">
+                help
+            </mat-icon>
+          </h2>
+        </div>
+      </div>
+      <div class="row">
+        <mat-form-field class="offset-md-1 col-md-3">
+          <mat-label>Calle</mat-label>
+          <input autocomplete="off" formControlName="calle" matInput>
+        </mat-form-field>
+        <mat-form-field class="col-md-3">
+          <mat-label>Numero Exterior</mat-label>
+          <input autocomplete="off" formControlName="numeroExterior" matInput>
+        </mat-form-field>
+        <mat-form-field class="col-md-3">
+          <mat-label>Numero Interior</mat-label>
+          <input autocomplete="off" formControlName="numeroInterior" matInput>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="offset-md-1 col-md-3">
+          <mat-label>Codigo Postal</mat-label>
+          <input autocomplete="off" formControlName="codigoPostal" matInput>
+        </mat-form-field>
+        <mat-form-field class="col-md-3">
+          <mat-label>Alcaldia/Municipio</mat-label>
+          <input autocomplete="off" formControlName="alcaldia" matInput>
+        </mat-form-field>
+        <mat-form-field class="col-md-3">
+          <mat-label>Referencia del domicilio</mat-label>
+          <input autocomplete="off" formControlName="referenciaDomicilio" matInput>
+        </mat-form-field>
+      </div>
+      <br>
+      <div class="row">
+        <button type="submit"  class="btn btn-primary offset-md-7 col-md-2">Ir a cotizacion</button>
+        <!--button type="submit" [disabled]="!formRegistrarCliente.valid" class="btn btn-primary offset-md-7 col-md-2">Ir a cotizacion</button-->
+      </div>
+    </mat-card>
+  </form>
+</div>
