@@ -1,2 +1,43 @@
 <h1>Expediente Medico</h1>
+<!--h2>*ngFor</h2>
+<input type="text" required #algoInput="ngModel" [(ngModel)]="newName" />
+<button [disabled]="newName===''" (click)="addName()">Add name</button>
+<ul>
+    <li *ngIf="names.length === 0">No hay elementos</li>
+    <li *ngFor="let name of names;index as i">
+        {{i}}-{{name}}
+        <button (click)="deleteName(i)"></button>
+    </li>
+</ul>
+
+<hr>
+<h2>*ngIf</h2>
+<p *ngIf="algo==='algo'; else elseBlock">My contenido</p>
+<ng-template #elseBlock>
+    <p>Bloque else</p>
+</ng-template>
+<hr>
+<h2>DataBindind-NgModel</h2>
+<p>-> {{algo}}</p>
+<input type="text" required #algoInput="ngModel" [(ngModel)]="algo" />
+<p>Valid:{{algoInput.valid}}</p>
+<input type="number" required #numInput="ngModel" [(ngModel)]="num" />
+<p>Valid:{{numInput.valid}}</p>
+<hr>
+<div class="box" (scroll)="onScroll($event)">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis turpis ut est commodo vehicula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam iaculis mi id sem facilisis, eget imperdiet nisl sodales. Proin condimentum velit elit, nec dapibus nisl congue a. Donec sit amet nulla vitae augue consectetur blandit ut quis urna. Curabitur eu metus rutrum, efficitur nunc et, lacinia ipsum. Vivamus molestie mi vitae nunc sodales dapibus a vel dui. Ut a mi a purus vulputate sollicitudin ac non lorem. Vivamus nec nisi vitae est tristique accumsan. Fusce lectus ipsum, suscipit et consectetur et, volutpat sit amet nibh. Mauris ac iaculis elit, imperdiet condimentum tortor. Vestibulum ac consectetur turpis, eu aliquam tortor.</p>
+</div>
+<p>-> {{algo}}</p>
+<input type="text" [value]="algo" (keyup)="changeName($event)" />
+<h2>Eventos:</h2>
+<button (click)="toogleButton()">Toggle Button</button>
+<hr>
+<h2>Propiedades</h2>
+<button [disabled]="btnDisabled">Enviar</button>
+<hr>
+<h2>{{'Bienvenido'.repeat(5)}}</h2>
+<p>3+3= {{3+3}}</p>
+<img src={{image}} alt="image"-->
+
+
 <router-outlet></router-outlet>

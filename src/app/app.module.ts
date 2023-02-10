@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { PacientesComponent } from './pacientes/pacientes.component';
@@ -36,7 +37,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     NgxMaskDirective,
     NgxMaskPipe,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [provideNgxMask()],
   bootstrap: [AppComponent]

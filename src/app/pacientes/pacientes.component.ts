@@ -8,6 +8,8 @@ import { PacienteService } from 'src/services/paciente.service';
   styleUrls: ['./pacientes.component.css']
 })
 export class PacientesComponent {
+
+  img : string= 'valor inicial';
   
   validadorNumeros = Validators.compose([Validators.pattern(/^[0-9]\d*$/),Validators.required,Validators.minLength(1),Validators.maxLength(4)])
   
