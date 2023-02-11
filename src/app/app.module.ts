@@ -16,31 +16,36 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask'
 import { HttpClientModule } from '@angular/common/http';
+import { ImgComponent } from "./img/img.component";
+import { MedicamentoComponent } from './medicamento/medicamento.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PacientesComponent,
-    ExpedienteComponent,
-    NoEncontradoComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-    MatIconModule,
-    MatTooltipModule,
-    MatCardModule,
-    MatFormFieldModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    NgxMaskDirective,
-    NgxMaskPipe,
-    HttpClientModule,
-    FormsModule
-  ],
-  providers: [provideNgxMask()],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        PacientesComponent,
+        ExpedienteComponent,
+        NoEncontradoComponent,
+        ImgComponent,
+        MedicamentoComponent
+    ],
+    providers: [provideNgxMask()],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatInputModule,
+        MatIconModule,
+        MatTooltipModule,
+        MatCardModule,
+        MatFormFieldModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        NgxMaskDirective,
+        NgxMaskPipe,
+        HttpClientModule,
+        FormsModule
+        
+    ]
 })
 export class AppModule { }

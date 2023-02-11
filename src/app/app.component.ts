@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Medicamento } from 'src/model/medicamento.model';
 
 @Component({
   selector: 'app-root',
@@ -6,13 +7,51 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  imgParent='';
+  showImg = true;
+
+  medicamentos: Medicamento[]=
+  [
+    {
+      idMedicamento: 1,
+      denominacion: 'Paracetamol',
+      viaAdministracion: 'Oral',
+      frecuencia: 'Diaria',
+      duracion: '5 dias',
+    },
+    {
+      idMedicamento: 2,
+      denominacion: 'Medicamento2',
+      viaAdministracion: 'Oral',
+      frecuencia: 'Diaria',
+      duracion: '5 dias',
+    },
+    {
+      idMedicamento: 3,
+      denominacion: 'Medicamento3',
+      viaAdministracion: 'Oral',
+      frecuencia: 'Diaria',
+      duracion: '5 dias',
+    },
+    {
+      idMedicamento: 4,
+      denominacion: 'Medicamento4',
+      viaAdministracion: 'Oral',
+      frecuencia: 'Diaria',
+      duracion: '5 dias',
+    },
+  ];
+
   title = 'app_expediente_levm';
-  image = 'https://source.unsplash.com/random'
   btnDisabled= true;
   algo = 'nuevo';
   num: number= 0;
   names: string[]=['Luis','Eduardo','Yimell','Alexandra'];
   newName: string ='';
+  onLoaded(img:String){
+    console.log('log desde el Padre',img);
+  }
+
 
   toogleButton(){
     this.btnDisabled=!this.btnDisabled;
@@ -34,5 +73,8 @@ export class AppComponent {
   deleteName(index:number)
   {
     this.names.splice(index,1);
+  }
+  toogleImg(){
+    this.showImg= !this.showImg
   }
 }

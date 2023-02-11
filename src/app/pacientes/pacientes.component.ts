@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PacienteService } from 'src/services/paciente.service';
 
@@ -9,7 +9,7 @@ import { PacienteService } from 'src/services/paciente.service';
 })
 export class PacientesComponent {
 
-  img : string= 'valor inicial';
+@Input()  img : string= 'valor inicial';
   
   validadorNumeros = Validators.compose([Validators.pattern(/^[0-9]\d*$/),Validators.required,Validators.minLength(1),Validators.maxLength(4)])
   
