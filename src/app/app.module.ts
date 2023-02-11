@@ -15,6 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask'
 import { HttpClientModule } from '@angular/common/http';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     NgxMaskDirective,
     NgxMaskPipe,
-    HttpClientModule
+    HttpClientModule,
+    HomeModule
   ],
   providers: [provideNgxMask()],
   bootstrap: [AppComponent]
