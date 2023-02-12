@@ -7,9 +7,29 @@ import { Medicamento } from 'src/model/medicamento.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  widthImg=10;
   imgParent='';
   showImg = true;
-
+  nombre='Luis';
+  sexo='M';
+  img = 'https://www.w3schools.com/howto/img_avatar.png';
+  registro = {
+      name:'',
+      email:'', 
+      password:''
+  }
+  box = {
+    width: 100,
+    height: 100,
+    background: 'red'
+  }
+  paciente = {
+    nombre:'Luis',
+    sexo:'M',
+    img : 'https://www.w3schools.com/howto/img_avatar.png',
+  }
+  
   medicamentos: Medicamento[]=
   [
     {
@@ -18,6 +38,7 @@ export class AppComponent {
       viaAdministracion: 'Oral',
       frecuencia: 'Diaria',
       duracion: '5 dias',
+      img: 'https://source.unsplash.com/random'
     },
     {
       idMedicamento: 2,
@@ -25,6 +46,7 @@ export class AppComponent {
       viaAdministracion: 'Oral',
       frecuencia: 'Diaria',
       duracion: '5 dias',
+      img: 'https://source.unsplash.com/random'
     },
     {
       idMedicamento: 3,
@@ -32,6 +54,7 @@ export class AppComponent {
       viaAdministracion: 'Oral',
       frecuencia: 'Diaria',
       duracion: '5 dias',
+      img: 'https://source.unsplash.com/random'
     },
     {
       idMedicamento: 4,
@@ -39,6 +62,16 @@ export class AppComponent {
       viaAdministracion: 'Oral',
       frecuencia: 'Diaria',
       duracion: '5 dias',
+      img: 'https://source.unsplash.com/random'
+    },
+    
+    {
+      idMedicamento: 5,
+      denominacion: 'Medicamento5',
+      viaAdministracion: 'Topica',
+      frecuencia: 'Diaria',
+      duracion: '5 dias',
+      img: 'https://source.unsplash.com/random'
     },
   ];
 
@@ -48,6 +81,9 @@ export class AppComponent {
   num: number= 0;
   names: string[]=['Luis','Eduardo','Yimell','Alexandra'];
   newName: string ='';
+  onRegister(){
+    console.log(this.registro);
+  }
   onLoaded(img:String){
     console.log('log desde el Padre',img);
   }

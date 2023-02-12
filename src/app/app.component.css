@@ -1,6 +1,153 @@
 .box{
     height: 200px;
     width: 200px;
-    overflow-y: scroll;
+    overflow: auto;
     background-color: darksalmon;
+}
+.medicamentos--grid{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 15px;
+    /*flex-direction: column;*/
+}
+img{
+    width: 100%;
+    border-radius: 10px;
+}
+h2,p{
+    margin: 0;
+    align-items: center;
+    text-align: center;
+}
+.message-error{
+    background: red;
+    color: white;
+    opacity: 0;
+    transition: all linear .5s;
+}
+.message-error.invalid {
+    opacity: 1;
+}
+
+.line-error{
+    height: 1;
+    border-bottom: 5px solid;
+}
+.line-error.invalid{
+    border-color: red ;
+}
+.line-error.valid{
+    border-color: green ;
+}
+.styles{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.form-title {
+    display: flex;
+    justify-content: center;
+    color: darkgreen;
+    font-size: 2.4rem;
+    font-family: cursive;
+    padding-bottom: 2rem;
+}
+.form {
+    display: grid;
+    grid-template-columns: 40px minmax(345px, 530px) 40px;
+    grid-template-rows: repeat(5, auto);
+}
+.input-group {
+    display: grid;
+    justify-items: stretch;
+    padding-bottom: 30px;
+}
+.input-group .form-label {
+    font-family: cursive;
+    padding-bottom: 5px;
+}
+.input-group .form-input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1.3px solid darkgreen;
+    border-radius: 10px;
+}
+.form-buttons {
+    display: flex;
+    margin: 10px;
+    padding-bottom: 30px;
+    justify-content: space-evenly;
+}
+.form-buttons .buttonSubmit {
+    font-size: 15px;
+    font-family: Arial;
+    width: 140px;
+    height: 50px;
+    border-width: 1px;
+    color: #fff;
+    border-color: #599bb3;
+    font-weight: bold;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0px 10px 14px -7px #276873;
+    text-shadow: 0px 1px 0px #3d768a;
+    background: linear-gradient(#599bb3, #408c99);
+}
+.form-buttons .buttonSubmit:disabled {
+    background: linear-gradient(27deg, rgba(0, 0, 0, 1) 0%, rgba(195, 190, 183, 1) 100%);
+    background-color: transparent;
+}
+.form-buttons .buttonSubmit:hover {
+    background: linear-gradient(#408c99, #599bb3);
+}
+.form-buttons .buttonAction {
+    font-size: 15px;
+    font-family: Arial;
+    width: 140px;
+    height: 50px;
+    border-width: 1px;
+    color: rgba(255, 255, 255, 1);
+    border-color: #599bb3;
+    font-weight: bold;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0px 10px 14px -7px #276873;
+    text-shadow: 0px 1px 0px #3d768a;
+    background: linear-gradient(rgba(121, 214, 217, 1), rgba(52, 198, 187, 1));
+}
+.form-buttons .buttonAction:hover {
+    background: linear-gradient(rgba(52, 198, 187, 1), rgba(121, 214, 217, 1));
+}  
+@media screen and (min-width: 10em) {
+    .medicamentos--grid{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 15px; ;
+    }
+}
+@media screen and (min-width: 25em) {
+    .medicamentos--grid{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 15px; ;
+    }
+}
+@media screen and (min-width: 40em) {
+    .medicamentos--grid{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 15px; ;
+    }
+}
+@media screen and (min-width: 62em) {
+    .medicamentos--grid{
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        gap: 15px; ;
+    }
 }

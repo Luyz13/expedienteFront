@@ -4,4 +4,5 @@ export interface Medicamento{
     viaAdministracion: string;
     frecuencia: string;
     duracion: string;
+    img:string;
 }

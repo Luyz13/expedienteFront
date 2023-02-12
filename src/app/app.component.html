@@ -1,5 +1,115 @@
 <h1>Expediente Medico</h1>
-<!--h2>*ngFor</h2>
+<h1 class="form-title">Formulario</h1>
+<form class="form" (ngSubmit)="onRegister()" #myForm="ngForm">
+  <div></div>
+  <div class="input-group">
+    <label class="form-label" for="Nombre">Nombre</label>
+    <input class="form-input" type="text" name="name" required id="name" #nameInput="ngModel" [(ngModel)]="registro.name" placeholder="Cesar">
+    <p class="message--error" [class.invalid]="nameInput.invalid">Campo requerido</p>
+  </div>
+  <div></div>
+  <div></div>
+  <div class="input-group">
+    <label class="form-label" for="Email">Email</label>
+    <input class="form-input" type="email" name="email" required id="email" #emailInput="ngModel" [(ngModel)]="registro.email">
+    <p class="message--error" [class.invalid]="emailInput.invalid">Campo requerido</p>
+  </div>
+  <div></div>
+  <div></div>
+  <div class="input-group">
+    <label class="form-label" for="password">Password</label>
+    <input class="form-input" type="password" name="password" required id="password" #passwordInput="ngModel" [(ngModel)]="registro.password">
+    <p  class="message--error" [class.invalid]="passwordInput.invalid">Campo requerido</p>
+  </div>
+  <div></div>
+  <div></div>
+  <div class="form-buttons">
+    <button class="buttonSubmit" [disabled]="myForm.invalid" type="submit">Registrar</button>
+    <button class="buttonAction" type="button">Accion</button>
+  </div>
+</form>
+<hr>
+<h2>NgClass & NgStyle</h2>
+<input type="text" required #nameInput4="ngModel" [(ngModel)]="paciente.nombre"/>
+<hr class="line-error" 
+  [ngClass]="{
+    'valid': nameInput4.valid,
+    'invalid': nameInput4.invalid
+  }"
+/>
+<p class="message-error" [class.invalid]="nameInput4.invalid">
+  El campo es requerido
+ </p>
+ <div class="styles">
+  <div>
+    <input type="number" [(ngModel)]="box.width"/>
+    <input type="number" [(ngModel)]="box.height"/>
+    <input type="color" [(ngModel)]="box.background"/>
+  </div>
+  <div>
+    <div [ngStyle]="{
+      'width.px': box.width,
+      'height.px': box.height,
+      'background-color': box.background ,
+      'display': 'block'
+    }">
+
+    </div>
+  </div>
+</div>
+<h2>Class & Style</h2>
+<input type="text" required #nameInput2="ngModel" [(ngModel)]="paciente.nombre"/>
+<p class="message-error" [class.invalid]="nameInput2.invalid">
+  El campo es requerido
+ </p>
+ <label>Nombre</label>
+ <input type="text" required #nameInput3="ngModel" [(ngModel)]="paciente.nombre"/>
+ <p [style.font-style]="nameInput3.invalid ? 'italic' : 'normal'">Texto texto texto</p>
+ <div class="styles">
+    <div>
+      <input type="text"  [(ngModel)]="widthImg"/>
+    </div>
+    <div>
+      <img [style.width.%]="widthImg" [src]="paciente.img">
+    </div>
+ </div>
+<hr/>
+<h1>ngSwitch</h1>
+<input type="text" required [(ngModel)]="paciente.nombre" />
+<div [ngSwitch]="paciente.nombre">
+  <p *ngSwitchCase="'Luis'">
+    La persona es Luis
+  </p>
+  <p *ngSwitchCase="'Eduardo'">
+    La persona es Eduardo
+  </p>
+  <p *ngSwitchCase="'camilo'">
+    La persona es Camilo
+  </p>
+  <p *ngSwitchDefault>No hace match</p>
+</div>
+<!-- <p *ngIf="person.name === 'nicolas'">
+  La persona es nicolas
+</p>
+<p *ngIf="person.name === 'julian'">
+  La persona es Julian
+</p>
+<p *ngIf="person.name === 'camilo'">
+  La persona es Camilo
+</p> -->
+<hr/>
+<h1>*ngFor Objs</h1>
+<div class="medicamentos--grid">
+  <div *ngFor="let medicamento of medicamentos">
+    <img [src]="medicamento.img" alt="image">
+    <h2><strong>{{medicamento.idMedicamento}}.- </strong>{{medicamento.denominacion}}</h2>
+    <p>{{medicamento.viaAdministracion}}</p>
+    <p>{{medicamento.frecuencia}}</p>
+    <p>{{medicamento.duracion}}</p>
+  </div>
+</div>
+<hr/>
+<h2>*ngFor</h2>
 <input type="text" required #algoInput="ngModel" [(ngModel)]="newName" />
 <button [disabled]="newName===''" (click)="addName()">Add name</button>
 <ul>
@@ -37,10 +147,10 @@
 <hr>
 <h2>{{'Bienvenido'.repeat(5)}}</h2>
 <p>3+3= {{3+3}}</p>
-<img src={{image}} alt="image"-->
-<p><input type="text" [(ngModel)]="imgParent"/></p>
+<!--img src={{image}} alt="image"-->
+<!--p><input type="text" [(ngModel)]="imgParent"/></p>
 <button (click)="toogleImg()" >Toogle Img</button>
 <p>{{showImg}}</p>
 <app-img *ngIf="showImg" (loaded)="onLoaded($event)" [img]="imgParent"></app-img>
-<app-medicamento [medicamento]="medicamento" *ngFor="let medicamento of medicamentos"></app-medicamento>
+<app-medicamento [medicamento]="medicamento" *ngFor="let medicamento of medicamentos"></app-medicamento-->
 <router-outlet ></router-outlet>
