@@ -1,4 +1,4 @@
-<h1>Expediente Medico</h1>
+<!--h1>Expediente Medico</h1>
 <h1 class="form-title">Formulario</h1>
 <form class="form" (ngSubmit)="onRegister()" #myForm="ngForm">
   <div></div>
@@ -87,7 +87,7 @@
     La persona es Camilo
   </p>
   <p *ngSwitchDefault>No hace match</p>
-</div>
+</div-->
 <!-- <p *ngIf="person.name === 'nicolas'">
   La persona es nicolas
 </p>
@@ -97,7 +97,7 @@
 <p *ngIf="person.name === 'camilo'">
   La persona es Camilo
 </p> -->
-<hr/>
+<!--hr/>
 <h1>*ngFor Objs</h1>
 <div class="medicamentos--grid">
   <div *ngFor="let medicamento of medicamentos">
@@ -146,11 +146,11 @@
 <button [disabled]="btnDisabled">Enviar</button>
 <hr>
 <h2>{{'Bienvenido'.repeat(5)}}</h2>
-<p>3+3= {{3+3}}</p>
+<p>3+3= {{3+3}}</p-->
 <!--img src={{image}} alt="image"-->
 <!--p><input type="text" [(ngModel)]="imgParent"/></p>
 <button (click)="toogleImg()" >Toogle Img</button>
 <p>{{showImg}}</p>
-<app-img *ngIf="showImg" (loaded)="onLoaded($event)" [img]="imgParent"></app-img>
-<app-medicamento [medicamento]="medicamento" *ngFor="let medicamento of medicamentos"></app-medicamento-->
-<router-outlet ></router-outlet>
+<app-img *ngIf="showImg" (loaded)="onLoaded($event)" [img]="imgParent"></app-img-->
+<app-medicamento [medicamento]="medicamento" *ngFor="let medicamento of medicamentos"></app-medicamento>
+<!--router-outlet ></router-outlet-->
