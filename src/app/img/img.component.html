@@ -1,4 +1,3 @@
-<p>img works!</p>
 <!--h3>{{ counter }}</h3-->
 <img (load)="imgLoaded()" (error)="imgError()" [src]="img" *ngIf="img; else elseImg">
 <ng-template #elseImg>

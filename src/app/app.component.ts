@@ -30,51 +30,7 @@ export class AppComponent {
     img : 'https://www.w3schools.com/howto/img_avatar.png',
   }
   
-  medicamentos: Medicamento[]=
-  [
-    {
-      idMedicamento: 1,
-      denominacion: 'Paracetamol',
-      viaAdministracion: 'Oral',
-      frecuencia: 'Diaria',
-      duracion: '5 dias',
-      img: 'https://source.unsplash.com/random'
-    },
-    {
-      idMedicamento: 2,
-      denominacion: 'Medicamento2',
-      viaAdministracion: 'Oral',
-      frecuencia: 'Diaria',
-      duracion: '5 dias',
-      img: 'https://source.unsplash.com/random'
-    },
-    {
-      idMedicamento: 3,
-      denominacion: 'Medicamento3',
-      viaAdministracion: 'Oral',
-      frecuencia: 'Diaria',
-      duracion: '5 dias',
-      img: 'https://source.unsplash.com/random'
-    },
-    {
-      idMedicamento: 4,
-      denominacion: 'Medicamento4',
-      viaAdministracion: 'Oral',
-      frecuencia: 'Diaria',
-      duracion: '5 dias',
-      img: 'https://source.unsplash.com/random'
-    },
-    
-    {
-      idMedicamento: 5,
-      denominacion: 'Medicamento5',
-      viaAdministracion: 'Topica',
-      frecuencia: 'Diaria',
-      duracion: '5 dias',
-      img: 'https://source.unsplash.com/random'
-    },
-  ];
-
+  
   title = 'app_expediente_levm';
   btnDisabled= true;
   algo = 'nuevo';

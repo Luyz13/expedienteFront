@@ -18,6 +18,8 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask'
 import { HttpClientModule } from '@angular/common/http';
 import { ImgComponent } from "./img/img.component";
 import { MedicamentoComponent } from './medicamento/medicamento.component';
+import { MedicamentosComponent } from './medicamentos/medicamentos.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
     declarations: [
@@ -26,7 +28,9 @@ import { MedicamentoComponent } from './medicamento/medicamento.component';
         ExpedienteComponent,
         NoEncontradoComponent,
         ImgComponent,
-        MedicamentoComponent
+        MedicamentoComponent,
+        MedicamentosComponent,
+        NavComponent
     ],
     providers: [provideNgxMask()],
     bootstrap: [AppComponent],

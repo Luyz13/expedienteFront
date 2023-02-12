@@ -1,15 +1,10 @@
-.box{
+/*.box{
     height: 200px;
     width: 200px;
     overflow: auto;
     background-color: darksalmon;
 }
-.medicamentos--grid{
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    gap: 15px;
-    /*flex-direction: column;*/
-}
+
 img{
     width: 100%;
     border-radius: 10px;
@@ -122,32 +117,7 @@ h2,p{
 }
 .form-buttons .buttonAction:hover {
     background: linear-gradient(rgba(52, 198, 187, 1), rgba(121, 214, 217, 1));
-}  
-@media screen and (min-width: 10em) {
-    .medicamentos--grid{
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        gap: 15px; ;
-    }
-}
-@media screen and (min-width: 25em) {
-    .medicamentos--grid{
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        gap: 15px; ;
-    }
-}
-@media screen and (min-width: 40em) {
-    .medicamentos--grid{
-        display: grid;
-        grid-template-columns: repeat(4,1fr);
-        gap: 15px; ;
-    }
-}
-@media screen and (min-width: 62em) {
-    .medicamentos--grid{
-        display: grid;
-        grid-template-columns: repeat(5,1fr);
-        gap: 15px; ;
-    }
+}  */
+.medicamentos--grid app-img img {
+    border-radius: 10px;
 }
