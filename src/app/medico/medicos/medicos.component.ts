@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CreateMedicoDTO, Medico, UpdateMedicoDTO } from 'src/model/medico.model';
 import { MedicoService } from 'src/services/medico.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-medicos',
@@ -77,12 +78,21 @@ constructor(
 
 ngOnInit(): void{
   this.medicoService.getAllMedicos()
-  .subscribe(
-    data =>{
+  .subscribe({
+    next: (data) =>{
       console.log(data);
      this.medicos=data;
-    }
-  )
+    },
+    error: (errorMsg) => {
+      Swal.fire({
+        title: 'Error!',
+        text: 'Hubo un problema con el servidor',
+        icon: 'error',
+        confirmButtonText: 'Ok',
+      });
+    }});
+  //
+  
 }
 toggleMedicoDetail() {
   this.showMedicoDetail = !this.showMedicoDetail;
@@ -90,7 +100,7 @@ toggleMedicoDetail() {
 
 onShowDetail(id: number) {
   console.log(id);
-  this.statusDetail = 'loading';
+  /*this.statusDetail = 'loading';
   this.toggleMedicoDetail();
   this.medicoService.getMedico(id)
   .subscribe(data => {
@@ -100,6 +110,24 @@ onShowDetail(id: number) {
     window.alert(errorMsg);
     this.statusDetail = 'error';
   })
+}*/
+this.statusDetail = 'loading';
+this.medicoService.getMedico(id).subscribe({
+  next: (data) => {
+    this.toggleMedicoDetail();
+    this.medicoChosen = data;
+    this.statusDetail = 'success';
+  },
+  error: (errorMsg) => {
+    this.statusDetail = 'error';
+    Swal.fire({
+      title: 'Error!',
+      text: errorMsg,
+      icon: 'error',
+      confirmButtonText: 'Ok',
+    });
+  }
+});
 }
 
 createNewMedico() {

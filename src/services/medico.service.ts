@@ -25,15 +25,16 @@ export class MedicoService {
     .pipe(
       catchError((error: HttpErrorResponse) => {
         if (error.status === HttpStatusCode.Conflict) {
-          return throwError('Algo esta fallando en el server');
+          return throwError(() => new Error("Algo esta fallando en el server"));
         }
         if (error.status === HttpStatusCode.NotFound) {
-          return throwError('El Medico no existe');
+          return throwError(() => new Error("El Medico no existe"));
         }
         if (error.status === HttpStatusCode.Unauthorized) {
-          return throwError('No estas permitido');
+          return throwError(() => new Error("No estas permitido"));
+          
         }
-        return throwError('Ups algo salio mal');
+        return throwError(() => new Error("Ups algo salio mal"));
       })
     )
   }
