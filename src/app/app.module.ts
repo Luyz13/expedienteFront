@@ -19,34 +19,36 @@ import { HomeModule } from './home/home.module';
 import { HeaderComponent } from './estructura-web/header/header.component';
 import { BodyComponent } from './estructura-web/body/body.component';
 import { FooterComponent } from './estructura-web/footer/footer.component';
+import { MedicoModule } from "./medico/medico.module";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PacientesComponent,
-    ExpedienteComponent,
-    NoEncontradoComponent,
-    HeaderComponent,
-    BodyComponent,
-    FooterComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-    MatIconModule,
-    MatTooltipModule,
-    MatCardModule,
-    MatFormFieldModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    NgxMaskDirective,
-    NgxMaskPipe,
-    HttpClientModule,
-    HomeModule
-  ],
-  providers: [provideNgxMask()],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        PacientesComponent,
+        ExpedienteComponent,
+        NoEncontradoComponent,
+        HeaderComponent,
+        BodyComponent,
+        FooterComponent
+    ],
+    providers: [provideNgxMask()],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatInputModule,
+        MatIconModule,
+        MatTooltipModule,
+        MatCardModule,
+        MatFormFieldModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        NgxMaskDirective,
+        NgxMaskPipe,
+        HttpClientModule,
+        HomeModule,
+        MedicoModule
+    ]
 })
 export class AppModule { }
