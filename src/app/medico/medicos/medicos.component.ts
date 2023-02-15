@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Medico } from 'src/model/medico.model';
+import { CreateMedicoDTO, Medico } from 'src/model/medico.model';
 import { MedicoService } from 'src/services/medico.service';
 
 @Component({
@@ -103,17 +103,27 @@ onShowDetail(id: number) {
 }
 
 createNewMedico() {
-  /*const product: CreateProductDTO = {
-    title: 'Nuevo prodcuto',
-    description: 'bla bla bla',
-    images: [`https://placeimg.com/640/480/any?random=${Math.random()}`],
-    price: 1000,
-    categoryId: 2,
+  const medico: CreateMedicoDTO = {
+    nombre: "Karina",
+    apellidoMaterno: "Balderas",
+    apellidoPaterno: "Perez",
+    fechaNacimiento: "02/02/1971",
+    sexo: "F",
+    cedulaProfecional:"RTYUIOP",
+    universidad: "UICUI"
   }
-  this.productsService.create(product)
+ this.medicoService.create(medico)
   .subscribe(data => {
-    this.products.unshift(data);
-  });*/
+    console.log(data);
+    this.medicos.unshift(data);
+  });
+  this.medicoService.create(medico)
+  .subscribe({
+    next: (res) => {
+      console.log(res);
+    },
+    error: (e) => console.error(e)
+  });
 }
 
 updateMedico() {
@@ -130,13 +140,13 @@ updateMedico() {
 }
 
 deleteMedico() {
-  /*const id = this.medicoChosen.id;
+  const id = this.medicoChosen.id;
   this.medicoService.delete(id)
   .subscribe(() => {
-    const productIndex = this.medicos.findIndex(item => item.id === this.productChosen.id);
-    this.medicos.splice(productIndex, 1);
+    const medicoIndex = this.medicos.findIndex(item => item.id === this.medicoChosen.id);
+    this.medicos.splice(medicoIndex, 1);
     this.showMedicoDetail = false;
-  });*/
+  });
 }
 
 loadMore() {

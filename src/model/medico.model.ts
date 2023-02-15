@@ -11,7 +11,7 @@ export interface Medico{
     foto: string;
     nombreCompleto: string;
 }
-export interface CreateMedicoDTO extends Omit<Medico, 'id' | 'nombreCompleto'> {
+export interface CreateMedicoDTO extends Omit<Medico, 'id' | 'nombreCompleto' | 'foto'> {
     
   }
   

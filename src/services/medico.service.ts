@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse, HttpParams, HttpStatusCode } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams, HttpStatusCode } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { retry, catchError, throwError, Observable } from 'rxjs';
 import { CreateMedicoDTO, Medico, UpdateMedicoDTO } from 'src/model/medico.model';
@@ -8,7 +8,9 @@ import { CreateMedicoDTO, Medico, UpdateMedicoDTO } from 'src/model/medico.model
 })
 export class MedicoService {
 
-  apiUrl="http://localhost:8080/api/v1/medico";
+   apiUrl="http://localhost:8080/api/v1/medico";
+   httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })};
 
   constructor(
     private http: HttpClient
@@ -47,21 +49,22 @@ export class MedicoService {
     )
   }
 
-  getProductsByPage(limit: number, offset: number) {
+  getMedicoByPage(limit: number, offset: number) {
     return this.http.get<Medico[]>(`${this.apiUrl}`, {
       params: { limit, offset }
     })
   }
 
-  create(dto: CreateMedicoDTO) {
-    return this.http.post<Medico>(this.apiUrl, dto);
+  create(dto: CreateMedicoDTO) :Observable<any> {
+     return this.http.post<any>(this.apiUrl, dto)
   }
+  
 
   update(id: string, dto: UpdateMedicoDTO) {
     return this.http.put<Medico>(`${this.apiUrl}/${id}`, dto);
   }
 
-  delete(id: string) {
+  delete(id: number) {
     return this.http.delete<boolean>(`${this.apiUrl}/${id}`);
   }
 }
