@@ -1,0 +1,36 @@
+.medicos--grid{
+    display: flex;
+    flex-direction: column;
+    /*grid-template-columns: repeat(5,1fr);
+    gap: 15px;
+    flex-direction: column;*/
+}.medico-detail {
+    position: fixed;
+    top: 0;
+    left: 60%;
+    bottom: 0;
+    right: 0;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: all ease-out 0.5s;
+    transform: translateX(100%);
+}
+.medico-detail.active {
+    transform: translateX(0);
+}
+@media screen and (min-width: 40em) and (max-width: 63.9) {
+    .medicos--grid{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 15px; ;
+    }
+}
+@media screen and (min-width: 64em) {
+    .medicos--grid{
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        gap: 15px; ;
+    }
+}
