@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CreateMedicoDTO, Medico } from 'src/model/medico.model';
+import { CreateMedicoDTO, Medico, UpdateMedicoDTO } from 'src/model/medico.model';
 import { MedicoService } from 'src/services/medico.service';
 
 @Component({
@@ -127,16 +127,22 @@ createNewMedico() {
 }
 
 updateMedico() {
-  /*const changes: UpdateMedicoDTO = {
-    title: 'change title',
+  const changes: UpdateMedicoDTO = {
+    nombre: "IRMA",
+    apellidoMaterno: "Balderas",
+    apellidoPaterno: "Perez",
+    fechaNacimiento: "02/02/1972",
+    sexo: "F",
+    cedulaProfecional:"789456123",
+    universidad: "El IPN"
   }
-  const id = this.productChosen.id;
-  this.productsService.update(id, changes)
+  const id = this.medicoChosen.id;
+  this.medicoService.update(id, changes)
   .subscribe(data => {
-    const productIndex = this.products.findIndex(item => item.id === this.productChosen.id);
-    this.products[productIndex] = data;
-    this.productChosen = data;
-  });*/
+    const productIndex = this.medicos.findIndex(med => med.id === this.medicoChosen.id);
+    this.medicos[productIndex] = data;
+    this.medicoChosen = data;
+  });
 }
 
 deleteMedico() {
@@ -147,13 +153,5 @@ deleteMedico() {
     this.medicos.splice(medicoIndex, 1);
     this.showMedicoDetail = false;
   });
-}
-
-loadMore() {
- /* this.medicoService.getAllMedico(this.limit, this.offset)
-  .subscribe(data => {
-    this.medicos = this.medicos.concat(data);
-    this.offset += this.limit;
-  });*/
 }
 }

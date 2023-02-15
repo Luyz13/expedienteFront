@@ -19,18 +19,6 @@ export class MedicoService {
   getAllMedicos():Observable<Medico[]>{
     return this.http.get<Medico[]>(this.apiUrl)
   }
-  getAllMedicoss(limit?: number, offset?: number) {
-    let params = new HttpParams();
-    if (limit && offset) {
-      params = params.set('limit', limit);
-      params = params.set('offset', limit);
-    }
-    return this.http.get<Medico[]>(this.apiUrl+"/", { params })
-    .pipe(
-      retry(3)
-    );
-  }
-
   getMedico(id: number) {
     return this.http.get<Medico>(`${this.apiUrl}/${id}`)
     .pipe(
@@ -49,18 +37,12 @@ export class MedicoService {
     )
   }
 
-  getMedicoByPage(limit: number, offset: number) {
-    return this.http.get<Medico[]>(`${this.apiUrl}`, {
-      params: { limit, offset }
-    })
-  }
-
   create(dto: CreateMedicoDTO) :Observable<any> {
      return this.http.post<any>(this.apiUrl, dto)
   }
   
 
-  update(id: string, dto: UpdateMedicoDTO) {
+  update(id: number, dto: UpdateMedicoDTO) {
     return this.http.put<Medico>(`${this.apiUrl}/${id}`, dto);
   }
 
