@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams, HttpStatusCode } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { retry, catchError, throwError, Observable } from 'rxjs';
+import { retry, catchError, throwError, Observable , map} from 'rxjs';
 import { CreateMedicoDTO, Medico, UpdateMedicoDTO } from 'src/model/medico.model';
 
 @Injectable({
@@ -18,7 +18,17 @@ export class MedicoService {
   
   getAllMedicos():Observable<Medico[]>{
     return this.http.get<Medico[]>(this.apiUrl)
-    .pipe(retry(3));
+    .pipe(retry(3),
+      map(
+        medicos => medicos.map(
+          m =>{
+            return{
+              ...m,
+              foto: 'https://www.w3schools.com/howto/img_avatar2.png'
+            }
+          }
+        )
+      ));
   }
   getMedico(id: number) {
     return this.http.get<Medico>(`${this.apiUrl}/${id}`)
