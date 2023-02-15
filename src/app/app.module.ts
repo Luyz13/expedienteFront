@@ -16,13 +16,19 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask'
 import { HttpClientModule } from '@angular/common/http';
 import { HomeModule } from './home/home.module';
+import { HeaderComponent } from './estructura-web/header/header.component';
+import { BodyComponent } from './estructura-web/body/body.component';
+import { FooterComponent } from './estructura-web/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PacientesComponent,
     ExpedienteComponent,
-    NoEncontradoComponent
+    NoEncontradoComponent,
+    HeaderComponent,
+    BodyComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
