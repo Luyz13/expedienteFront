@@ -8,7 +8,7 @@ import { CreateMedicoDTO, Medico, UpdateMedicoDTO } from 'src/model/medico.model
 })
 export class MedicoService {
 
-   apiUrl="http://localhost:8080/api/v1/medico";
+   apiUrl="/api/v1/medico";
    httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })};
 
@@ -18,6 +18,7 @@ export class MedicoService {
   
   getAllMedicos():Observable<Medico[]>{
     return this.http.get<Medico[]>(this.apiUrl)
+    .pipe(retry(3));
   }
   getMedico(id: number) {
     return this.http.get<Medico>(`${this.apiUrl}/${id}`)
