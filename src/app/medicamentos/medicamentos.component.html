@@ -1,6 +1,9 @@
+<br>
+<p>La cantidad  {{myShoppingCart.length}}</p>
 <div class="medicamentos--grid">
     <app-medicamento
       [medicamento]="medicamento"
       *ngFor="let medicamento of medicamentos"
+      (addedMedicamento)="onAddToShoppingCart($event)"
     ></app-medicamento>
   </div>

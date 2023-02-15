@@ -8,6 +8,7 @@ import { Medicamento } from 'src/model/medicamento.model';
 })
 export class MedicamentosComponent {
 
+  myShoppingCart: Medicamento[] = [];
   medicamentos: Medicamento[]=
   [
     {
@@ -52,6 +53,9 @@ export class MedicamentosComponent {
       img: 'https://source.unsplash.com/random'
     },
   ];
-
+  onAddToShoppingCart(medicamento: Medicamento){
+    console.log(medicamento);
+    this.myShoppingCart.push(medicamento);
+  }
 
 }

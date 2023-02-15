@@ -1,9 +1,13 @@
-<p>medicamento works!</p>
 <p>{{medicamento.idMedicamento}}</p>
 <app-img  [img]="medicamento.img"></app-img>
 <p>{{medicamento.denominacion}}</p>
 <p>{{medicamento.viaAdministracion}}</p>
 <p>{{medicamento.frecuencia}}</p>
 <p>{{medicamento.duracion}}</p>
+<button (click)="onAddToCart()">Add medicamentos</button>
+<!--p>
+    <a routerLink="paciente"
+       class="button"> Ver detalles </a>
+  </p-->
 <hr/>
 

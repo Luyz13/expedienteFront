@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PacientesComponent } from './pacientes/pacientes.component';
 import { ExpedienteComponent } from './expediente/expediente.component';
 import { NoEncontradoComponent } from './no-encontrado/no-encontrado.component';
+import { MedicamentosComponent } from './medicamentos/medicamentos.component';
 
 
 const rutas: Routes = [
@@ -16,10 +17,14 @@ const rutas: Routes = [
         component: ExpedienteComponent
     },
     {
+      path: 'medicamentos',
+      component: MedicamentosComponent
+    },
+    /*{
         path:'',
         redirectTo:'/paciente',
         pathMatch:'full'
-    },
+    },*/
     {
         path:'**',
         component: NoEncontradoComponent
