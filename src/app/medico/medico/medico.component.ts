@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Medico } from 'src/model/medico.model';
 
 @Component({
   selector: 'app-medico',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./medico.component.css']
 })
 export class MedicoComponent {
+  @Input() medico!:Medico ;
+  
+  @Output() showMedico = new EventEmitter<number>();
 
+  onShowDetail() {
+    this.showMedico.emit(this.medico.id);
+  }
 }
