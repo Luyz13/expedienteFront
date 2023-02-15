@@ -1,0 +1,24 @@
+<br>
+<button (click)="createNewMedico()">create</button>
+<button (click)="onShowDetail(233)">detalle not found</button>
+<div class="medicos--grid">
+    <app-medico
+      [medico]="medico"
+      *ngFor="let medico of medicos"
+      (showMedico)="onShowDetail($event)"
+    ></app-medico>
+  </div>
+  <div class="medico-detail" [class.active]="showMedicoDetail">
+    {{ statusDetail }}
+    <div *ngIf="medicoChosen">
+      <button (click)="toggleMedicoDetail()">Close</button>
+      <app-img  [img]="medicoChosen.foto"></app-img>
+      <h2>{{ medicoChosen.nombreCompleto}}</h2>
+      <p>{{ medicoChosen.universidad }}</p>
+      <p>{{ medicoChosen.cedulaProfecional }}</p>
+      <p>{{ medicoChosen.fechaNacimiento }}</p>
+      <p>{{ medicoChosen.sexo }}</p>
+      <button (click)="updateMedico()">Editar</button>
+      <button (click)="deleteMedico()">Eliminar</button>
+    </div>
+  </div>
