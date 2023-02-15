@@ -20,7 +20,7 @@
 .medico-detail.active {
     transform: translateX(0);
 }
-@media screen and (min-width: 40em) and (max-width: 63.9) {
+/*@media screen and (min-width: 40em) and (max-width: 63.9) {
     .medicos--grid{
         display: grid;
         grid-template-columns: repeat(4,1fr);
@@ -28,6 +28,34 @@
     }
 }
 @media screen and (min-width: 64em) {
+    .medicos--grid{
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        gap: 15px; ;
+    }
+}*/
+@media screen and (min-width: 10em) {
+    .medicos--grid{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 15px; ;
+    }
+}
+@media screen and (min-width: 25em) {
+    .medicos--grid{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 15px; ;
+    }
+}
+@media screen and (min-width: 40em) {
+    .medicos--grid{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 15px; ;
+    }
+}
+@media screen and (min-width: 62em) {
     .medicos--grid{
         display: grid;
         grid-template-columns: repeat(5,1fr);
