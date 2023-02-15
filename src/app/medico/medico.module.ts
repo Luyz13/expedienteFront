@@ -14,6 +14,9 @@ import { MedicoDetailComponent } from './medico-detail/medico-detail.component';
     ImgComponent,
     MedicoDetailComponent
   ],
+  exports: [
+    MedicosComponent
+  ],
   imports: [
     CommonModule
   ]
