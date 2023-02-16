@@ -145,13 +145,13 @@ createNewMedico() {
     console.log(data);
     this.medicos.unshift(data);
   });
-  this.medicoService.create(medico)
+ /* this.medicoService.create(medico)
   .subscribe({
     next: (res) => {
       console.log(res);
     },
     error: (e) => console.error(e)
-  });
+  });*/
 }
 
 updateMedico() {
