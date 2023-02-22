@@ -48,10 +48,6 @@ export class ImgComponent implements OnInit,OnChanges, AfterViewInit, OnDestroy 
     //async - fetch, etc.
     //one time
     console.log('ngOnInit','imgValue =>' ,this.img)
-    this.counterFn=window.setInterval(() => {
-      this.counter += 1 ;
-      console.log('run counter')
-    },1000)
   }
   imgError(){
     this.img=this.imgDefault;

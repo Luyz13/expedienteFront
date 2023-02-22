@@ -3,9 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { PacientesComponent } from './pacientes/pacientes.component';
-import { ExpedienteComponent } from './expediente/expediente.component';
-import { NoEncontradoComponent } from './no-encontrado/no-encontrado.component';
 import { AppRoutingModule } from './app.routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';  
@@ -24,9 +21,6 @@ import { NavComponent } from './nav/nav.component';
 @NgModule({
     declarations: [
         AppComponent,
-        PacientesComponent,
-        ExpedienteComponent,
-        NoEncontradoComponent,
         ImgComponent,
         MedicamentoComponent,
         MedicamentosComponent,
