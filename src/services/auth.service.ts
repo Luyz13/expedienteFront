@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { switchMap } from 'rxjs';
+import { switchMap, tap } from 'rxjs';
 import { Auth } from 'src/model/auth.model';
 import { LoginUsuarioDTO, Usuario } from 'src/model/usuario.model';
+import { TokenService } from './token.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,12 +13,17 @@ export class AuthService {
   private apiUrl = '/api/v1/auth';
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private tokenService: TokenService
   ) { }
 
 
 login(user:LoginUsuarioDTO) {
-  return this.http.post<Auth>(`${this.apiUrl}/signin`,user);
+  return this.http.post<Auth>(`${this.apiUrl}/signin`,user)
+  .pipe(
+    tap(response => 
+      this.tokenService.setToken(response.accessToken))
+  );
 }
 /*
 getProfile(token: string) {
