@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { switchMap } from 'rxjs';
 import { Auth } from 'src/model/auth.model';
-import { Usuario } from 'src/model/usuario.model';
+import { LoginUsuarioDTO, Usuario } from 'src/model/usuario.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,10 +16,10 @@ export class AuthService {
   ) { }
 
 
-login(email: string, password: string) {
-  return this.http.post<Auth>('/api/v1/login', {email, password});
+login(user:LoginUsuarioDTO) {
+  return this.http.post<Auth>(`${this.apiUrl}/signin`,user);
 }
-
+/*
 getProfile(token: string) {
   // const headers = new HttpHeaders();
   // headers.set('Authorization',  `Bearer ${token}`);
@@ -36,5 +36,5 @@ loginAndGet(email: string, password: string) {
   .pipe(
     switchMap(rta => this.getProfile(rta.access_token)),
   )
-}
+}*/
 }
