@@ -13,10 +13,10 @@ export class UsuariosService {
   ) { }
 
   create(dto: CreateUsuarioDTO) {
-    return this.http.post<Usuario>(this.apiUrl, dto);
+    return this.http.post<String>(this.apiUrl+'auth/signup', dto);
   }
 
   getAll() {
-    return this.http.get<Usuario[]>(this.apiUrl);
+    return this.http.get<Usuario[]>(this.apiUrl+'usuarios');
   }
 }
