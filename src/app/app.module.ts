@@ -20,6 +20,7 @@ import { HeaderComponent } from './estructura-web/header/header.component';
 import { BodyComponent } from './estructura-web/body/body.component';
 import { FooterComponent } from './estructura-web/footer/footer.component';
 import { MedicoModule } from "./medico/medico.module";
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
     declarations: [
@@ -29,7 +30,8 @@ import { MedicoModule } from "./medico/medico.module";
         NoEncontradoComponent,
         HeaderComponent,
         BodyComponent,
-        FooterComponent
+        FooterComponent,
+        NavComponent
     ],
     providers: [provideNgxMask()],
     bootstrap: [AppComponent],

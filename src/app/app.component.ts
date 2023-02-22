@@ -32,16 +32,6 @@ export class AppComponent {
     });
   }
 
-  login(){
-    const userLogin:LoginUsuarioDTO={
-      username:"alexandra",
-      password:"alexMeli"
-    }
-     this.authService.login(userLogin)
-      .subscribe(rta => {
-        console.log(rta.accessToken);
-        this.token=rta.accessToken;
-      });
-  }
+
 
 }
