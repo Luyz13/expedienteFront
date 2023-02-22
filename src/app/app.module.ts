@@ -14,13 +14,14 @@ import {MatCardModule} from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask'
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HomeModule } from './home/home.module';
 import { HeaderComponent } from './estructura-web/header/header.component';
 import { BodyComponent } from './estructura-web/body/body.component';
 import { FooterComponent } from './estructura-web/footer/footer.component';
 import { MedicoModule } from "./medico/medico.module";
 import { NavComponent } from './nav/nav.component';
+import { TokenInterceptor } from './interceptors/token.interceptor';
 
 @NgModule({
     declarations: [
@@ -33,7 +34,9 @@ import { NavComponent } from './nav/nav.component';
         FooterComponent,
         NavComponent
     ],
-    providers: [provideNgxMask()],
+    providers: [
+        provideNgxMask(),
+        {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor,multi:true}],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
