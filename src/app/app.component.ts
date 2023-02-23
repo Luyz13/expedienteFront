@@ -12,6 +12,7 @@ import { UsuariosService } from 'src/services/usuarios.service';
 export class AppComponent {
   title = 'app_expediente_levm';
   token = '';
+  
 
   constructor(
     private authService: AuthService,
@@ -31,7 +32,4 @@ export class AppComponent {
       alert(rta);
     });
   }
-
-
-
 }

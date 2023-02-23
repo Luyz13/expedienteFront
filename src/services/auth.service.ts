@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { switchMap, tap } from 'rxjs';
+import { checkToken } from 'src/app/interceptors/token.interceptor';
 import { Auth } from 'src/model/auth.model';
 import { LoginUsuarioDTO, Usuario } from 'src/model/usuario.model';
 import { TokenService } from './token.service';

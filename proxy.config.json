@@ -3,7 +3,6 @@
         "target":"http://localhost:8080",
         "secure":false,
         "logLevel": "debug",
-        "chaneOrigin":true,
-        "port":8080
+        "chaneOrigin":true
     }
 }
