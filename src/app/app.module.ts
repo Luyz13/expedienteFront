@@ -22,6 +22,10 @@ import { FooterComponent } from './estructura-web/footer/footer.component';
 import { MedicoModule } from "./medico/medico.module";
 import { NavComponent } from './nav/nav.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { HomeComponent } from './estructura-web/home/home.component';
+import { LoginComponent } from './estructura-web/login/login.component';
+import { RegistroComponent } from './estructura-web/registro/registro.component';
+import { PerfilComponent } from './estructura-web/perfil/perfil.component';
 
 @NgModule({
     declarations: [
@@ -32,7 +36,11 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
         HeaderComponent,
         BodyComponent,
         FooterComponent,
-        NavComponent
+        NavComponent,
+        HomeComponent,
+        LoginComponent,
+        RegistroComponent,
+        PerfilComponent
     ],
     providers: [
         provideNgxMask(),

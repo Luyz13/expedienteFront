@@ -6,11 +6,12 @@ import { ExpedienteComponent } from './expediente/expediente.component';
 import { NoEncontradoComponent } from './no-encontrado/no-encontrado.component';
 import { WelcomeComponent } from './home/welcome/welcome.component';
 import { MedicosComponent } from './medico/medicos/medicos.component';
+import { HomeComponent } from './estructura-web/home/home.component';
 
 
 const rutas: Routes = [
     {
-        path: 'paciente',
+        path: 'paciente/:id',
         component: PacientesComponent
     },
     {
@@ -24,6 +25,10 @@ const rutas: Routes = [
     {
       path: 'medicos',
       component: MedicosComponent,
+    },
+    {
+      path: 'home',
+      component: HomeComponent,
     },
     {
         path:'',
