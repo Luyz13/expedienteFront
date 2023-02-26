@@ -9,7 +9,7 @@ import { Medico } from 'src/model/medico.model';
 export class MedicoComponent {
   @Input() medico!:Medico ;
   
-  @Output() showMedico = new EventEmitter<number>();
+  @Output() showMedico = new EventEmitter<string>();
 
   onShowDetail() {
     this.showMedico.emit(this.medico.id);

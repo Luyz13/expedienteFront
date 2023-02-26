@@ -4,6 +4,7 @@ import { MedicosComponent } from './medicos/medicos.component';
 import { MedicoComponent } from './medico/medico.component';
 import { ImgComponent } from './img/img.component';
 import { MedicoDetailComponent } from './medico-detail/medico-detail.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -18,7 +19,8 @@ import { MedicoDetailComponent } from './medico-detail/medico-detail.component';
     MedicosComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class MedicoModule { }

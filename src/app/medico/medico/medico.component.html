@@ -1,7 +1,10 @@
 <p>{{medico.id}}</p>
-<app-img  [img]="medico.foto"></app-img>
+<a [routerLink]="['/medicos', medico.id]">
+    <app-img  [img]="medico.foto"></app-img>
+</a>
 <p>{{medico.nombreCompleto}}</p>
 <p>{{medico.universidad}}</p>
 <button (click)="onShowDetail()">Ver detalle</button>
+<!--a routerLink="." [queryParams]="{ medico: medico.id }">Ver detalle</a-->
 <hr/>
 

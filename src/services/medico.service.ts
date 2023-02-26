@@ -30,7 +30,7 @@ export class MedicoService {
         )
       ));
   }
-  getMedico(id: number) {
+  getMedico(id: string) {
     return this.http.get<Medico>(`${this.apiUrl}/${id}`)
     .pipe(
       catchError((error: HttpErrorResponse) => {
@@ -54,11 +54,11 @@ export class MedicoService {
   }
   
 
-  update(id: number, dto: UpdateMedicoDTO) {
+  update(id: string, dto: UpdateMedicoDTO) {
     return this.http.put<Medico>(`${this.apiUrl}/${id}`, dto);
   }
 
-  delete(id: number) {
+  delete(id: string) {
     return this.http.delete<boolean>(`${this.apiUrl}/${id}`);
   }
 }

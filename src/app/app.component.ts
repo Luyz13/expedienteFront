@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { CreateUsuarioDTO, LoginUsuarioDTO, Usuario } from 'src/model/usuario.model';
 
 import { AuthService } from 'src/services/auth.service';
@@ -16,7 +17,7 @@ export class AppComponent {
 
   constructor(
     private authService: AuthService,
-    private usuariosService: UsuariosService,
+    private usuariosService: UsuariosService
   ){}
   
   createUser(){

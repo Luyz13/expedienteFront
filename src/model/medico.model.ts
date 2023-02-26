@@ -1,6 +1,6 @@
 
 export interface Medico{
-    id: number;
+    id: string;
     nombre: string;
     apellidoPaterno : string;
     apellidoMaterno : string;

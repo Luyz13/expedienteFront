@@ -7,6 +7,7 @@ import { NoEncontradoComponent } from './no-encontrado/no-encontrado.component';
 import { WelcomeComponent } from './home/welcome/welcome.component';
 import { MedicosComponent } from './medico/medicos/medicos.component';
 import { HomeComponent } from './estructura-web/home/home.component';
+import { MedicoDetailComponent } from './medico/medico-detail/medico-detail.component';
 
 
 const rutas: Routes = [
@@ -25,6 +26,10 @@ const rutas: Routes = [
     {
       path: 'medicos',
       component: MedicosComponent,
+    },
+    {
+      path: 'medicos/:id',
+      component: MedicoDetailComponent,
     },
     {
       path: 'home',

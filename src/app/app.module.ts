@@ -26,6 +26,7 @@ import { HomeComponent } from './estructura-web/home/home.component';
 import { LoginComponent } from './estructura-web/login/login.component';
 import { RegistroComponent } from './estructura-web/registro/registro.component';
 import { PerfilComponent } from './estructura-web/perfil/perfil.component';
+import { Router, RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
@@ -61,7 +62,8 @@ import { PerfilComponent } from './estructura-web/perfil/perfil.component';
         NgxMaskPipe,
         HttpClientModule,
         HomeModule,
-        MedicoModule
+        MedicoModule,
+        RouterModule
     ]
 })
 export class AppModule { }
