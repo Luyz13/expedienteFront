@@ -9,18 +9,18 @@ import Swal from 'sweetalert2';
   templateUrl: './medicos.component.html',
   styleUrls: ['./medicos.component.css']
 })
-export class MedicosComponent implements OnInit{
+export class MedicosComponent{
 
-  medicos: Medico[]= [];
+  @Input() medicos: Medico[]= [];
   medicoChosen!:Medico ;
   //@Input() medicoId: string | null= null;
-  /*@Input() 
+  @Input() 
     set medicoId(id: string| null){
       if(id){
         this.onShowDetail(id);
       }
-  }*/
-  medicoId: string |  null=null;
+  }
+  //medicoId: string |  null=null;
   limit = 10;
   offset = 0;
   statusDetail: 'loading' | 'success' | 'error' | 'init' = 'init';
@@ -86,28 +86,6 @@ constructor(
   private route: ActivatedRoute*/
 ){}
 
-ngOnInit(): void{
-  this.medicoService.getAllMedicos()
-  .subscribe({
-    next: (data) =>{
-      console.log(data);
-     this.medicos=data;
-    },
-    error: (errorMsg) => {
-      Swal.fire({
-        title: 'Error!',
-        text: 'Hubo un problema con el servidor',
-        icon: 'error',
-        confirmButtonText: 'Ok',
-      });
-    }});
-  //
-  /*this.route.queryParamMap.subscribe(params => {
-    this.medicoId= params.get('medico');
-    console.log(this.medicoId);
-  } )*/
-  
-}
 toggleMedicoDetail() {
   this.showMedicoDetail = !this.showMedicoDetail;
 }
@@ -115,12 +93,12 @@ toggleMedicoDetail() {
 onShowDetail(id: string) {
   console.log(id);
   this.statusDetail = 'loading';
-  /*if(!this.showMedicoDetail){
+  if(!this.showMedicoDetail){
     this.showMedicoDetail=true;
-  }*/
+  }
   this.medicoService.getMedico(id).subscribe({
     next: (data) => {
-      this.toggleMedicoDetail();
+      //this.toggleMedicoDetail();
       this.medicoChosen = data;
       this.statusDetail = 'success';
     },
