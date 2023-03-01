@@ -1,10 +1,21 @@
-# AppExpedienteLevm
+# Expediente Medico - FrontEnd
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
+Este proyecto fue creado con Angular version 15.1.3.
 
-## Development server
+## Ejecución
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Para ejecutar el Proyecto, tenemos 2 opciones:
+<ul>
+<li>
+Ejecutar el comando `ng serve`
+</li>
+<li>
+Ejecutar el el comando `npm run start:proxy`.
+</li>
+<p>Esta opción, es porque se configuro un proxy con la finalidad de evitar los <i> errores</i> de <b> Cross Origin</b> 
+</ul>
+
+Con cual quiera opción se puede ver la aplicación ejecutandose desde el navegador con la url: `http://localhost:4200/`. 
 
 ## Code scaffolding
 
