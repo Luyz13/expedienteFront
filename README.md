@@ -17,23 +17,92 @@ Ejecutar el el comando `npm run start:proxy`.
 
 Con cual quiera opción se puede ver la aplicación ejecutandose desde el navegador con la url: `http://localhost:4200/`. 
 
-## Code scaffolding
+## Construcción
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Pero los elementos que se usaron para construir este avance fueron:
+<ul>
+  <li>
+    componets
+  </li> 
+  <li>
+    moduls
+  </li>
+  <li>
+    service
+  </li>
+  <li>
+    interface
+  </li>
+  <li>
+    interceptors
+  </li>
+</ul>
 
-## Build
+### Modulos
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Tomanto en cuenta, el desarrollo del Backend me enfoque en el desarrollo de un Modulo para las operaciones correspondientes a los Medicos, ademas de un modulo Shared para compartir componentes entre modulos como por ejemplo el componente IMG.
 
-## Running unit tests
+### Componentes
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Sin embargo cuando inicie mi proyecto, cree algunos componentes y entre los mas importantes son:
+<ul>
+  <li>
+    pacientes
+  </li> 
+  <li>
+    no-encontrados
+  </li>
+  <li>
+    home
+  </li>
+  <li>
+    nav
+  </li>
+</ul> 
 
-## Running end-to-end tests
+### Servicios
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Se crearon varios elementos service, en donde se concentra la logica de negocio entre las que se encuentra la conexión a la API del Backend.
 
-## Further help
+Entre los principales son:
+<ul>
+  <li>
+    Auth:
+  </li> 
+  <p> En donde se maneja el Login en la apliación.</p>
+  <li>
+    Medico
+  </li>
+  <li>
+    Paciente
+  </li>
+  <li>
+    Token
+  </li>
+  <p> Donde se administra el token para validar si el usuario tiene los privilegios para hacer x o y operaciones en el sistema.
+  <li>
+    Usuarios
+  </li>
+</ul> 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# expedienteFront
+### Models
+
+<p> Se crearon apartir de <i> Interface</i> donde tenemos los siguientes: <br> Auth, Medico, Paciente, Rol y Usuario. <br> En donde se destaca la creación de DTO´s para crear y modificar apartir de estos usando:</p>
+
+<ul>
+  <li>
+    Omit
+  </li> 
+  <li>
+    Partial
+  </li>
+</ul> 
+ 
+ ### Interceptors
+ 
+ Se creo para que nos ayudaran con el tema del Token y para poder añadir este, acada petición Http.
+ 
+ ## Extras
+ 
+ Inclui a mi proyecta temas de Angular Material, Ng Mask para el tema de la validación de formularios y Swal para la alertas en caso de Errores.
+
