@@ -1,28 +1,108 @@
-# AppExpedienteLevm
+# Expediente Medico - FrontEnd
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
+Este proyecto fue creado con Angular version 15.1.3.
 
-## Development server
+## Ejecución
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Para ejecutar el Proyecto, tenemos 2 opciones:
+<ul>
+<li>
+Ejecutar el comando `ng serve`
+</li>
+<li>
+Ejecutar el el comando `npm run start:proxy`.
+</li>
+<p>Esta opción, es porque se configuro un proxy con la finalidad de evitar los <i> errores</i> de <b> Cross Origin</b> 
+</ul>
 
-## Code scaffolding
+Con cual quiera opción se puede ver la aplicación ejecutandose desde el navegador con la url: `http://localhost:4200/`. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Construcción
 
-## Build
+Pero los elementos que se usaron para construir este avance fueron:
+<ul>
+  <li>
+    componets
+  </li> 
+  <li>
+    moduls
+  </li>
+  <li>
+    service
+  </li>
+  <li>
+    interface
+  </li>
+  <li>
+    interceptors
+  </li>
+</ul>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Modulos
 
-## Running unit tests
+Tomanto en cuenta, el desarrollo del Backend me enfoque en el desarrollo de un Modulo para las operaciones correspondientes a los Medicos, ademas de un modulo Shared para compartir componentes entre modulos como por ejemplo el componente IMG.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Componentes
 
-## Running end-to-end tests
+Sin embargo cuando inicie mi proyecto, cree algunos componentes y entre los mas importantes son:
+<ul>
+  <li>
+    pacientes
+  </li> 
+  <li>
+    no-encontrados
+  </li>
+  <li>
+    home
+  </li>
+  <li>
+    nav
+  </li>
+</ul> 
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Servicios
 
-## Further help
+Se crearon varios elementos service, en donde se concentra la logica de negocio entre las que se encuentra la conexión a la API del Backend.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# expedienteFront
+Entre los principales son:
+<ul>
+  <li>
+    Auth:
+  </li> 
+  <p> En donde se maneja el Login en la apliación.</p>
+  <li>
+    Medico
+  </li>
+  <li>
+    Paciente
+  </li>
+  <li>
+    Token
+  </li>
+  <p> Donde se administra el token para validar si el usuario tiene los privilegios para hacer x o y operaciones en el sistema.
+  <li>
+    Usuarios
+  </li>
+</ul> 
+
+### Models
+
+<p> Se crearon apartir de <i> Interface</i> donde tenemos los siguientes: <br> Auth, Medico, Paciente, Rol y Usuario. <br> En donde se destaca la creación de DTO´s para crear y modificar apartir de estos usando:</p>
+
+<ul>
+  <li>
+    Omit
+  </li> 
+  <li>
+    Partial
+  </li>
+</ul> 
+ 
+ ### Interceptors
+ 
+ Se creo para que nos ayudaran con el tema del Token y para poder añadir este, acada petición Http.
+ 
+ ## Extras
+ 
+ Inclui a mi proyecta temas de Angular Material, Ng Mask para el tema de la validación de formularios y Swal para la alertas en caso de Errores.
+
