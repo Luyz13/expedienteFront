@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { Paciente } from 'src/model/paciente.model';
 import { PacienteService } from 'src/services/paciente.service';
 
 @Component({
@@ -8,6 +10,9 @@ import { PacienteService } from 'src/services/paciente.service';
   styleUrls: ['./pacientes.component.css']
 })
 export class PacientesComponent {
+  
+  pacienteId: string|null=null;
+  //@Input() paciente!: Paciente;
   
   validadorNumeros = Validators.compose([Validators.pattern(/^[0-9]\d*$/),Validators.required,Validators.minLength(1),Validators.maxLength(4)])
   
@@ -28,7 +33,7 @@ export class PacientesComponent {
     
   });
 
-  constructor(private fb: FormBuilder, private pacienteService: PacienteService) { }
+  constructor(private fb: FormBuilder, private pacienteService: PacienteService,private route: ActivatedRoute) { }
 
   registrarPaciente(): void {
     console.log(this.formRegistrarPaciente.value);
@@ -44,9 +49,13 @@ export class PacientesComponent {
 
 
   ngOnInit(): void{
-    let id= sessionStorage.getItem('id');
-    if(id != null){
-      this.pacienteService.obtenerPaciente(id).subscribe(paciente => {
+   this.route.paramMap.subscribe(params => {
+      this.pacienteId=params.get('id');
+      console.log(this.pacienteId)
+    })
+   // let id= sessionStorage.getItem('id');
+    if(this.pacienteId != null){
+      this.pacienteService.obtenerPaciente(this.pacienteId).subscribe(paciente => {
         console.log(paciente);
         this.formRegistrarPaciente.patchValue({
             nombre: paciente.nombre,
@@ -60,7 +69,4 @@ export class PacientesComponent {
       console.log("Sin Sesion");
     }
   }
-
-
-
 }

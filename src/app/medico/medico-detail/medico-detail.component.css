@@ -1,0 +1,56 @@
+.medico-page {
+    width: 90%;
+    margin: 0 auto;
+}
+.medico-page > .back-btn {
+    background-color: var(--white);
+    border: 0;
+    cursor: pointer;
+    color: var(--hospital-green);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    margin-bottom: 1.6rem;
+    font-size: 2rem;
+}
+.product-page > .back-btn > svg {
+    width: 2.5rem;
+}
+.detail {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+.detail > .gallery {
+    overflow: hidden;
+    border-radius: var(--sm);
+    margin-bottom: var(--sm);
+}
+.detail > .gallery img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+.detail > .medico-info .nombre {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: var(--md);
+}
+.detail > .medico-info .universidad {
+    font-size: var(--lg);
+    font-weight: 700;
+    margin-bottom: var(--md);
+}
+.detail > .medico-info .cedula {
+    font-size: var(--md);
+    margin-bottom: var(--md);
+}
+@media screen and (max-width: 768px) {
+    .detail {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+   }
+}

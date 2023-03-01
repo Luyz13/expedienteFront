@@ -1,1 +1,32 @@
-<p>medico-detail works!</p>
+<!--div class="detail-product">
+    <button (click)="goToBack()">Back</button>
+    <div class="detail" *ngIf="medico">
+    <div class="gallery">
+    </div>
+    <div>
+        <h1>{{ medico.nombreCompleto}}</h1>
+        <app-img  [img]="medico.foto"></app-img>
+        <h2>{{ medico.universidad }}</h2>
+        <p>{{ medico.cedulaProfecional }}</p>
+        <p>{{ medico.fechaNacimiento }}</p>
+        <p>{{ medico.sexo }}</p>
+    </div>
+    </div>
+    </div-->
+<div class="medico-page">
+    <button (click)="goToBack()" class="back-btn">
+        Back
+    </button>
+
+    <div class="detail" *ngIf="medico">
+        <div class="gallery">
+            <app-img  [img]="medico.foto"></app-img>
+        </div>
+
+        <div class="medico-info">
+            <h1 class="nombre ">{{ medico.nombreCompleto }}</h1>
+            <p class="universidad">{{ medico.universidad }}</p>
+            <p class="cedula">{{ medico.cedulaProfecional }}</p>
+        </div>
+    </div>
+</div>
