@@ -1,0 +1,47 @@
+<div class="show-mobile">
+    <div>
+      <button (click)="toggleMenu()">
+        <img src="" alt="menu">
+      </button>
+      <a href="">
+        <img src="" alt="logo">
+      </a>
+      <a href="">
+        <img src="" alt="logo">
+      </a>
+    </div>
+    <div class="side-menu" [class.active]="activeMenu">
+        <button (click)="toggleMenu()">Close</button>
+        <ul>
+          <li><a href="">Medicos</a></li>
+          <li><a href="">Medicamentos</a></li>
+          <li><a href="">Pacientes</a></li>
+        </ul>
+    </div>
+  </div>
+  <div class="hide-mobile">
+    <div>
+      <nav>
+        <a class="logo" href="">
+          <img src="" alt="logo">
+        </a>
+        <ul>
+          <li><a routerLinkActive="active" routerLink="welcome">Medicos</a></li>
+          <li><a routerLinkActive="active" routerLink="medicos">Medicamentos</a></li>
+          <li><a routerLinkActive="active" routerLink="paciente/2">Pacientes</a></li>
+        </ul>
+      </nav>
+      <div class="info">
+        <div class="account">
+          <button *ngIf="!token; else elseBlock" (click)="login()">Login</button>
+          <ng-template #elseBlock>{{ correo }}</ng-template>
+        </div>
+        <div>
+          <a href="">
+            <img width="15%"  src="" alt="logo">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  

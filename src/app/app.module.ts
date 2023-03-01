@@ -14,12 +14,19 @@ import {MatCardModule} from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask'
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HomeModule } from './home/home.module';
 import { HeaderComponent } from './estructura-web/header/header.component';
 import { BodyComponent } from './estructura-web/body/body.component';
 import { FooterComponent } from './estructura-web/footer/footer.component';
 import { MedicoModule } from "./medico/medico.module";
+import { NavComponent } from './nav/nav.component';
+import { TokenInterceptor } from './interceptors/token.interceptor';
+import { HomeComponent } from './estructura-web/home/home.component';
+import { LoginComponent } from './estructura-web/login/login.component';
+import { RegistroComponent } from './estructura-web/registro/registro.component';
+import { PerfilComponent } from './estructura-web/perfil/perfil.component';
+import { Router, RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
@@ -29,9 +36,16 @@ import { MedicoModule } from "./medico/medico.module";
         NoEncontradoComponent,
         HeaderComponent,
         BodyComponent,
-        FooterComponent
+        FooterComponent,
+        NavComponent,
+        HomeComponent,
+        LoginComponent,
+        RegistroComponent,
+        PerfilComponent
     ],
-    providers: [provideNgxMask()],
+    providers: [
+        provideNgxMask(),
+        {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor,multi:true}],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
@@ -48,7 +62,8 @@ import { MedicoModule } from "./medico/medico.module";
         NgxMaskPipe,
         HttpClientModule,
         HomeModule,
-        MedicoModule
+        MedicoModule,
+        RouterModule
     ]
 })
 export class AppModule { }

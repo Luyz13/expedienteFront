@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MedicosComponent } from './medicos/medicos.component';
 import { MedicoComponent } from './medico/medico.component';
-import { ImgComponent } from './img/img.component';
+
 import { MedicoDetailComponent } from './medico-detail/medico-detail.component';
+import { SharedModule } from '../shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -11,14 +13,15 @@ import { MedicoDetailComponent } from './medico-detail/medico-detail.component';
   declarations: [
     MedicosComponent,
     MedicoComponent,
-    ImgComponent,
     MedicoDetailComponent
   ],
   exports: [
     MedicosComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    SharedModule
   ]
 })
 export class MedicoModule { }

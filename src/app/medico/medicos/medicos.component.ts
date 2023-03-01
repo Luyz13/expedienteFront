@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { CreateMedicoDTO, Medico, UpdateMedicoDTO } from 'src/model/medico.model';
 import { MedicoService } from 'src/services/medico.service';
 import Swal from 'sweetalert2';
@@ -8,10 +9,18 @@ import Swal from 'sweetalert2';
   templateUrl: './medicos.component.html',
   styleUrls: ['./medicos.component.css']
 })
-export class MedicosComponent implements OnInit{
+export class MedicosComponent{
 
-  medicos: Medico[]= [];
+  @Input() medicos: Medico[]= [];
   medicoChosen!:Medico ;
+  //@Input() medicoId: string | null= null;
+  @Input() 
+    set medicoId(id: string| null){
+      if(id){
+        this.onShowDetail(id);
+      }
+  }
+  //medicoId: string |  null=null;
   limit = 10;
   offset = 0;
   statusDetail: 'loading' | 'success' | 'error' | 'init' = 'init';
@@ -73,61 +82,36 @@ export class MedicosComponent implements OnInit{
   }
 ];*/
 constructor(
-  private medicoService: MedicoService
+  private medicoService: MedicoService/*,
+  private route: ActivatedRoute*/
 ){}
 
-ngOnInit(): void{
-  this.medicoService.getAllMedicos()
-  .subscribe({
-    next: (data) =>{
-      console.log(data);
-     this.medicos=data;
-    },
-    error: (errorMsg) => {
-      Swal.fire({
-        title: 'Error!',
-        text: 'Hubo un problema con el servidor',
-        icon: 'error',
-        confirmButtonText: 'Ok',
-      });
-    }});
-  //
-  
-}
 toggleMedicoDetail() {
   this.showMedicoDetail = !this.showMedicoDetail;
 }
 
-onShowDetail(id: number) {
+onShowDetail(id: string) {
   console.log(id);
-  /*this.statusDetail = 'loading';
-  this.toggleMedicoDetail();
-  this.medicoService.getMedico(id)
-  .subscribe(data => {
-    this.medicoChosen = data;
-    this.statusDetail = 'success';
-  }, errorMsg => {
-    window.alert(errorMsg);
-    this.statusDetail = 'error';
-  })
-}*/
-this.statusDetail = 'loading';
-this.medicoService.getMedico(id).subscribe({
-  next: (data) => {
-    this.toggleMedicoDetail();
-    this.medicoChosen = data;
-    this.statusDetail = 'success';
-  },
-  error: (errorMsg) => {
-    this.statusDetail = 'error';
-    Swal.fire({
-      title: 'Error!',
-      text: errorMsg,
-      icon: 'error',
-      confirmButtonText: 'Ok',
-    });
+  this.statusDetail = 'loading';
+  if(!this.showMedicoDetail){
+    this.showMedicoDetail=true;
   }
-});
+  this.medicoService.getMedico(id).subscribe({
+    next: (data) => {
+      //this.toggleMedicoDetail();
+      this.medicoChosen = data;
+      this.statusDetail = 'success';
+    },
+    error: (errorMsg) => {
+      this.statusDetail = 'error';
+      Swal.fire({
+        title: 'Error!',
+        text: errorMsg,
+        icon: 'error',
+        confirmButtonText: 'Ok',
+      });
+    }
+  });
 }
 
 createNewMedico() {
@@ -145,13 +129,6 @@ createNewMedico() {
     console.log(data);
     this.medicos.unshift(data);
   });
- /* this.medicoService.create(medico)
-  .subscribe({
-    next: (res) => {
-      console.log(res);
-    },
-    error: (e) => console.error(e)
-  });*/
 }
 
 updateMedico() {
